@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">  
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>{% block title %}Мой Блог{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  <!-- style.css должен быть в static/article/css -->
 </head>
 <body>
-    <h1>Записи в блоге</h1>
-</body>
-</html>
+    <header>
+        <h1>Блог нашей команды</h1>  
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'article: post_list' %}">Главная</a></li> 
+            <li><a href="{% url 'article: about' %}">О нас</a></li>  <!-- Информация о сайте -->
+            <!-- Здесь можно добавить больше ссылок позже -->
+        </ul>
+    </nav>
