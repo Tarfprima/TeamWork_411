@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Мой Блог{% endblock %}</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">  <!-- style.css должен быть в static/article/css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  <!-- style.css в static/article/css -->
 </head>
 <body>
     <header>
@@ -13,6 +13,8 @@
     </header>
     <nav>
         <ul>
-            
+            <li><a href="{% url 'article:post_list' %}">Главная</a></li>  <!-- Предполагая url name post_list в article app -->
+            <li><a href="{% url 'article:about' %}">О нас</a></li>  <!-- Добавь url если будет about page -->
+            <!-- Здесь можно добавить больше ссылок позже -->
         </ul>
     </nav>

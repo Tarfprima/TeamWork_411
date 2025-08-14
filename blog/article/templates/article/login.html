@@ -1,0 +1,13 @@
+{% extends 'article/base.html' %}  <!-- Путь относительно templates, предполагая base в article/ -->
+
+{% block title %}Вход в аккаунт{% endblock %}
+
+{% block content %}
+    <h2>Вход</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}  
+        <button type="submit">Войти</button>
+    </form>
+    <p>Нет аккаунта? <a href="{% url 'register' %}">Зарегистрироваться</a></p>  <!-- Url для регистрации-->
+{% endblock %}
