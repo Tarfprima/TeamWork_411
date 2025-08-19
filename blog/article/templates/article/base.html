@@ -12,7 +12,7 @@
         <h1>Блог нашей команды</h1>
     </header>
     <nav>
-      <ul>
+        <ul>
             <li><a href="{% url 'article:post_list' %}">Главная</a></li>
             <li><a href="{% url 'article:about' %}">О нас</a></li>
             {% if user.is_authenticated %}
@@ -22,7 +22,7 @@
                 <li><a href="{% url 'login' %}">Вход</a></li>  
                 <li><a href="{% url 'register' %}">Регистрация</a></li> 
             {% endif %}
-        </ul>
+        </ul>  
     </nav>
     <main>
         {% block content %}
