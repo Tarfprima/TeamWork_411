@@ -1,7 +1,7 @@
 from django.contrib import admin
 from . import models
 
-@admin.register(models.Artile)
+@admin.register(models.Artiсle)
 class ArticleAdmin (admin.ModelAdmin):
     list_display = ['title', 'text', 'date']
 
