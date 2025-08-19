@@ -4,9 +4,22 @@
 
 {% block content %}
     <h2>Список постов</h2>
+    {% if user.is_authenticated %}
+        <p><a href="{% url 'article:post_create' %}">Добавить пост</a></p>
+    {% endif %}
     {% for post in object_list %}
+<<<<<<< HEAD
         <h3>{{ post.title }}</h3>
         <p>{{ post.text }}</p>  
         <p>Автор: {{ post.user.username }} | {{ post.date }}</p>
+=======
+        <article>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.text }}</p>
+            <p>Автор: {{ post.user.username }} | {{ post.date }}</p>
+        </article>
+    {% empty %}
+        <p>Пока нет записей.</p>
+>>>>>>> b05ce96d636ac492de9c171c06a58d5394bee828
     {% endfor %}
 {% endblock %}
