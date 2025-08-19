@@ -33,7 +33,7 @@ class LoginForm(forms.Form):
 
 from . import models
 class ArticleForm(forms.ModelForm):
-    model = models.Article
+    model = models.Artiсle
 
     fields = [
         'title',
