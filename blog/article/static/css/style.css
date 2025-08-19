@@ -35,3 +35,95 @@ button:hover {
     background-color: #2980b9;
 }
 
+
+.form-card {
+  background: var(--card-bg);
+  padding: calc(var(--spacing) * 2);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px #f5f6fa(0,0,0,0.05);
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-card h1 {
+  margin-top: 0;
+  margin-bottom: var(--spacing);
+  font-size: 1.5rem;
+}
+
+.form-card p {
+  margin-bottom: var(--spacing);
+  font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--base-spacing);
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+  box-shadow: 0 0 4px rgba(6, 41, 105, 0.493);
+}
+
+
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: var(--spacing);
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 4px rgba(3, 36, 97, 0.493);
+}
+
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+.profile-card {
+  background: var(--card-bg);
+  padding: calc(var(--spacing) * 2);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.profile-card h2 {
+  margin-top: 0;
+  margin-bottom: var(--spacing);
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+}
+
+.profile-info img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
