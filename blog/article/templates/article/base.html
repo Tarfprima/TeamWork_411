@@ -13,11 +13,11 @@
     </header>
     <nav>
         <ul>
-            <li><a href="{% url 'article:post_list' %}">Главная</a></li>
-            <li><a href="{% url 'article:about' %}">О нас</a></li>
+            <li><a href="{% url 'article:posts' %}">Главная</a></li>
+            <li><a href="#">О нас</a></li>
             {% if user.is_authenticated %}
-                <li><a href="{% url 'article:profile' %}">Профиль</a></li>  
-                <li><a href="{% url 'logout' %}">Выход</a></li> 
+                <li><a href="#">Профиль</a></li>  
+                <li><a href="#">Выход</a></li> 
             {% else %}
                 <li><a href="{% url 'login' %}">Вход</a></li>  
                 <li><a href="{% url 'register' %}">Регистрация</a></li> 

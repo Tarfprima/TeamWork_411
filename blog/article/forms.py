@@ -32,10 +32,20 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput, label='Пароль')
 
 from . import models
-class ArticleForm(forms.ModelForm):
-    model = models.Artiсle
 
-    fields = [
-        'title',
-        'text'
-    ]
+class ArticleForm(forms.ModelForm):
+
+    class Meta:
+        model = models.Article
+
+        fields = [
+            'title',
+            'text'
+        ]
+
+        labels = {
+            'title': 'Заголовок',
+            'text': 'Текст',
+        }
+
+        

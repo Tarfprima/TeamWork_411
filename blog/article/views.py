@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from . forms import RegistrationForm, LoginForm
+from . forms import RegistrationForm, LoginForm, ArticleForm
 from django.contrib import auth
+from . import models
 
 def main(request):
     return render(
@@ -55,5 +56,29 @@ def login(request):
         'article/login.html',
         {
             'form': form
+        }
+    )
+
+def post_list(request):
+    object_list = models.Article.objects.all()
+    return render(
+        request,
+        'article/post_list.html',
+        {
+            'object_list': object_list
+        }
+    )
+
+def post_form(request):
+    form = ArticleForm(request.POST)
+
+    if form.is_valid():
+        form.save()
+
+    return render(
+        request,
+        'article/post_form.html',
+        {
+            'form':form
         }
     )
