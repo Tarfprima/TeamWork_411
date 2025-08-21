@@ -35,7 +35,6 @@ button:hover {
     background-color: #2980b9;
 }
 
-
 .form-card {
   background: var(--card-bg);
   padding: calc(var(--spacing) * 2);
@@ -75,8 +74,6 @@ input:focus {
   outline: none;
   box-shadow: 0 0 4px rgba(6, 41, 105, 0.493);
 }
-
-
 
 input, select {
   width: 100%;
@@ -126,4 +123,17 @@ a:hover {
   width: 80px;
   height: 80px;
   border-radius: 50%;
+}
+
+.container {
+    width: 60%;
+    margin: 10px auto;
+}
+
+.post {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
