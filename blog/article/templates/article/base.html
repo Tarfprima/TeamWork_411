@@ -16,13 +16,8 @@
             <li><a href="{% url 'article:posts' %}">Главная</a></li>
             <li><a href="#">О нас</a></li>
             {% if user.is_authenticated %}
-<<<<<<< HEAD
-                <li><a href="#">Профиль</a></li>  
-                <li><a href="#">Выход</a></li> 
-=======
                 <li><a href="{% url 'article:profile' %}">Профиль</a></li>  
                 <li><a href="{% url 'article:logout' %}">Выход</a></li> 
->>>>>>> b05ce96d636ac492de9c171c06a58d5394bee828
             {% else %}
                 <li><a href="{% url 'article:login' %}">Вход</a></li>  
                 <li><a href="{% url 'article:register' %}">Регистрация</a></li> 
