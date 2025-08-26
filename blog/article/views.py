@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from . forms import RegistrationForm, LoginForm, ArticleForm
 from django.contrib import auth
 from . import models
+from django.contrib.auth.decorators import login_required
 
 def main(request):
     return render(
@@ -19,7 +20,7 @@ def register(request):
             user.save()
             return render(
                 request,
-                'article/register-complete.html',
+                'article/register_complete.html',
                 {
                     'user': user
                 }
@@ -69,10 +70,13 @@ def post_list(request):
         }
     )
 
+@login_required
 def post_form(request):
     form = ArticleForm(request.POST)
 
     if form.is_valid():
+        post = form.save(commit=False)  
+        post.user = request.user
         form.save()
 
     return render(
