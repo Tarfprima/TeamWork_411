@@ -82,3 +82,19 @@ def post_form(request):
             'form':form
         }
     )
+
+def profile(request, uid):
+    posts = models.Article.objects.filter(user_id = uid)
+    return render(
+        request,
+        'article/profile.html',
+        {
+            'posts': posts
+        }
+    )
+
+def logout(request):
+    return render(
+        request,
+        'article/logout.html',
+    )
