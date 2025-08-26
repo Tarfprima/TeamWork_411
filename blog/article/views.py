@@ -94,7 +94,5 @@ def profile(request, uid):
     )
 
 def logout(request):
-    return render(
-        request,
-        'article/logout.html',
-    )
+    auth.logout(request)
+    return redirect('article:post_list')
