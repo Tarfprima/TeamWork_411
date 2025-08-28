@@ -18,13 +18,17 @@ def register(request):
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password'])
             user.save()
-            return render(
-                request,
-                'article/register_complete.html',
-                {
-                    'user': user
-                }
-            )
+            auth.login(request, user)
+            return redirect ('/')
+        else:
+            return redirect('register')
+            # return render(
+            #     request,
+            #     'article/register_complete.html',
+            #     {
+            #         'user': user
+            #     }
+            # )
     else:
         form = RegistrationForm()
     return render(
@@ -78,6 +82,9 @@ def post_form(request):
         post = form.save(commit=False)  
         post.user = request.user
         form.save()
+        return redirect('/')
+    else:
+        form = ArticleForm()
 
     return render(
         request,
