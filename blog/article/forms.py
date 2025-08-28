@@ -40,12 +40,14 @@ class ArticleForm(forms.ModelForm):
 
         fields = [
             'title',
+            'image',
             'text'
         ]
 
         labels = {
             'title': 'Заголовок',
             'text': 'Текст',
+            'image': 'Картинка',
         }
 
         

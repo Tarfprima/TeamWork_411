@@ -22,13 +22,7 @@ def register(request):
             return redirect ('/')
         else:
             return redirect('register')
-            # return render(
-            #     request,
-            #     'article/register_complete.html',
-            #     {
-            #         'user': user
-            #     }
-            # )
+            
     else:
         form = RegistrationForm()
     return render(
@@ -76,7 +70,7 @@ def post_list(request):
 
 @login_required
 def post_form(request):
-    form = ArticleForm(request.POST)
+    form = ArticleForm(request.POST, request.FILES)
 
     if form.is_valid():
         post = form.save(commit=False)  
